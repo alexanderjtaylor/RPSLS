@@ -1,5 +1,6 @@
 
-class Player():
+class Player:
 
     def __init__(self):
-        self.pick = [0,1,2,3,4]
+        self.rounds_won = 0
+        self.gesture = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]

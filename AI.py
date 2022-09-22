@@ -1,6 +1,7 @@
+from player import Player
 
-
-class AI():
+class AI(Player):
 
     def __init__(self):
-        pass
+        super.__init__()
+        

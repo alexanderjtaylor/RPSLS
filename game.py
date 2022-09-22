@@ -1,11 +1,14 @@
 
-from time import pthread_getcpuclockid
+
+from user import User
+from ai import AI
 
 
 class Game():
 
     def __init__(self):
-        pass
+        User()
+        AI()
 
     def display_welcome(self):
         print("Welcome to Rock Paper Scissors Lizard Spock")

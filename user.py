@@ -1,6 +1,6 @@
+from player import Player
 
-
-class User():
-
+class User(Player):
+    
     def __init__(self):
-        pass
+        super.__init__()
