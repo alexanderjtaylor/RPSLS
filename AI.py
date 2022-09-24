@@ -1,11 +1,14 @@
 from random import random
-from player import Player
+# from player import Player
 
-class AI(Player):
+class AI:
 
     def __init__(self, name):
-        super.__init__(name)
+        self.name = name
+        self.rounds_won = 0
     
     def choose_gesture(self):
-        self.chosen_gesture = self.gesture(random.randint(0,4))
+        gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        num_chosen = int(gesture_list(random.randit(0,4)))
+        self.chosen_gesture = gesture_list[num_chosen]
         print(f"{self.name} has chosen {self.chosen_gesture}")

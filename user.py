@@ -1,10 +1,13 @@
-from player import Player
+# from player import Player
 
-class User(Player):
+class User:
     
     def __init__(self, name):
-        super.__init__(name)
+        self.name = name
+        self.rounds_won = 0
         
     def choose_gesture(self):
-        self.chosen_gesture = input("Enter your pick: ")
+        gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        num_chosen = int(input("Enter your pick: "))
+        self.chosen_gesture = gesture_list[num_chosen]
         print(f"{self.name} has chosen {self.chosen_gesture}")
