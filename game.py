@@ -56,9 +56,9 @@ class Game():
 
 
     def battle_phase(self):
-        self.player1.chosen_gesture
-        self.player2.chosen_gesture
         while self.player1.rounds_won < 2 and self.player2.rounds_won < 2:
+            self.player1.choose_gesture()
+            self.player2.choose_gesture()
             if self.player1.chosen_gesture == "Rock" and self.player2.chosen_gesture == "Lizard":
                 self.player1.rounds_won += 1
                 print(f"{self.player1.name} wins the round")
