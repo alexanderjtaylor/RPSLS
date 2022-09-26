@@ -1,6 +1,7 @@
 
 from user import User
 from ai import AI
+from time import sleep
 
 
 class Game():
@@ -14,13 +15,14 @@ class Game():
         self.whos_playing()
         self.battle_phase()
         self.display_winner()
+        self.play_again()
 
     def display_welcome(self):
         print("Welcome to Rock Paper Scissors Lizard Spock")
-
+        sleep(1)
         print("Each game with be best 2 out of 3")
         print("Use number keys to make your selection")
-
+        sleep(1)
         print("Scissors cuts paper")
         print("Paper covers rock")
         print("Rock crushes lizard")
@@ -33,25 +35,30 @@ class Game():
         print("Rock crushes scissors")
 
     def whos_playing(self):
-        self.num_players = input("How many players? 1, 2, or 3 for a surprise ")
-
-        print("Choose 0 for Rock")
-        print("Choose 1 for Paper")
-        print("Choose 2 for Scissors")
-        print("Choose 3 for Lizard")
-        print("Choose 4 for Spock")
-
-        if self.num_players == "1":
-            self.player1 = User("Player 1")
-            self.player2 = AI("CPU")
-        elif self.num_players == "2":
-            self.player1 = User("Player 1")
-            self.player2 = User("Player 2")
-        elif self.num_players == "3":
-            self.player1 = AI("CPU1")
-            self.player2 = AI("CPU2")
-        else:
-            print("Invalid entry...")
+        valid_user_entry = False
+        while valid_user_entry == False:
+            self.num_players = input("How many players? 1, 2, or 3 for a surprise ")
+            sleep(1)
+            print("Choose 0 for Rock")
+            print("Choose 1 for Paper")
+            print("Choose 2 for Scissors")
+            print("Choose 3 for Lizard")
+            print("Choose 4 for Spock")
+            sleep(1)
+            if self.num_players == "1":
+                self.player1 = User("Player 1")
+                self.player2 = AI("CPU")
+                valid_user_entry = True
+            elif self.num_players == "2":
+                self.player1 = User("Player 1")
+                self.player2 = User("Player 2")
+                valid_user_entry = True
+            elif self.num_players == "3":
+                self.player1 = AI("CPU1")
+                self.player2 = AI("CPU2")
+                valid_user_entry = True
+            else:
+                print("Invalid entry...")
 
 
     def battle_phase(self):
@@ -136,6 +143,7 @@ class Game():
             winner = self.player1.name
         else:
             winner = self.player2.name
+        sleep(1)
         print(f"{winner} is the winner!")
 
     def play_again(self):
