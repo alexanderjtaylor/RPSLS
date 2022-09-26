@@ -1,13 +1,10 @@
 import random
-
-
-# from player import Player
+from player import Player
 
 class AI:
 
     def __init__(self, name):
-        self.name = name
-        self.rounds_won = 0
+        super().__init__()
     
     def choose_gesture(self):
         gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]

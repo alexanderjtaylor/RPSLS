@@ -1,5 +1,4 @@
 
-
 from user import User
 from ai import AI
 
@@ -52,7 +51,7 @@ class Game():
             self.player1 = AI("CPU1")
             self.player2 = AI("CPU2")
         else:
-            print("Invaild entry...")
+            print("Invalid entry...")
 
 
     def battle_phase(self):
@@ -133,8 +132,17 @@ class Game():
                 print("It's a tie! Try again.")
 
     def display_winner(self):
-            if self.player1.rounds_won == 2:
-                winner = self.player1.name
-            else:
-                winner = self.player2.name
-            print(f"{winner} is the winner!")
+        if self.player1.rounds_won == 2:
+            winner = self.player1.name
+        else:
+            winner = self.player2.name
+        print(f"{winner} is the winner!")
+
+    def play_again(self):
+        play_again_user_input = input("Do you want to play again? ('y'/'n'): ")
+        if play_again_user_input == "y":
+            self.run_game()
+        elif play_again_user_input == "n":
+            pass
+        else:
+            print("Invalid entry...")
